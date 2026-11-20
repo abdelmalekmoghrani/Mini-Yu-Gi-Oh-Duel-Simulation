@@ -20,7 +20,15 @@ public void setDef(int def) {
 	Def = def;
 }
    
-   
+   @Override
+   public String toString() {
+	   return "Monster: " +getName()
+	       + " description :"+getDiscription()
+	       +"Atk :" +Atk
+	       + "def :" +Def;
+	   
+	   
+   }
    
    
    
