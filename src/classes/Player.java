@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class Player {
 
-	private int points = 4000 ;
+	private int points ; //initialize in the main function
 	private int cardnbr = 0 ;
+	
+	private boolean isActive = false ;
 	
 	private String name ;
 	
@@ -14,11 +16,13 @@ public class Player {
 	
 	Scanner scanner = new Scanner(System.in);
 	
+	//constructor function	
 	public Player(String name ){
 		this.name = name ;
 	}
 	
-	public int getPint() {
+	//setters and getters
+	public int getPoint() {
 		return points;
 	}
 	
@@ -26,9 +30,17 @@ public class Player {
 		this.points = newpoints;
 	}
 	
+	public boolean getisActive() {
+		return isActive;
+	}
+	
+	public void setisActive(boolean newActive) {
+		this.isActive = newActive;
+	}
+	
 	public Card getFieldCard() {
 		return field;
-	} // !field can be null
+	} // field can be null
 	
 	public void addCard(Card newcard){
 		if(newcard instanceof Monster) {
@@ -56,7 +68,7 @@ public class Player {
 			do {
 				System.out.println("choose a Card (enter the Card number):");
 			 	choosingCard = scanner.nextInt();
-			} while(choosingCard > cardnbr && choosingCard <= 0);
+			} while(choosingCard > cardnbr || choosingCard <= 0);
 			
 		} while(hand[choosingCard - 1] instanceof Monster == false);
 		
