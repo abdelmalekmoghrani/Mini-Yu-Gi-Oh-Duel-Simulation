@@ -10,7 +10,7 @@ public class Player {
 	private String name ;
 	
 	private Card field ;
-	private Card[] hand = new Card[3] ;
+	private Card[] hand = new Card[6] ;
 	
 	Scanner scanner = new Scanner(System.in);
 	
@@ -18,10 +18,25 @@ public class Player {
 		this.name = name ;
 	}
 	
-	public void addCard(Monster newcard){
-		if(cardnbr < 3) {
-			hand[cardnbr] = new Monster(newcard.getAtk() , newcard.getDef() , newcard.getName() , newcard.getDiscription());
-			cardnbr += 1 ;
+	public int getPint() {
+		return points;
+	}
+	
+	public void setPoints(int newpoints) {
+		this.points = newpoints;
+	}
+	
+	public Card getFieldCard() {
+		return field;
+	} // !field can be null
+	
+	public void addCard(Card newcard){
+		if(newcard instanceof Monster) {
+			Monster isMon = (Monster) newcard;
+			if(cardnbr < 6) {
+				hand[cardnbr] = new Monster(isMon.getAtk() , isMon.getDef() , isMon.getName() , isMon.getDiscription());
+				cardnbr += 1 ;
+			}
 		}
 	}
 	
@@ -41,12 +56,12 @@ public class Player {
 			do {
 				System.out.println("choose a Card (enter the Card number):");
 			 	choosingCard = scanner.nextInt();
-			} while(choosingCard > 3 && choosingCard <= 0);
+			} while(choosingCard > cardnbr && choosingCard <= 0);
 			
-		} while(hand[choosingCard-1] instanceof Monster == false);
+		} while(hand[choosingCard - 1] instanceof Monster == false);
 		
-		if (hand[choosingCard-1] instanceof Monster) {
-			 Monster isMon = (Monster) hand[choosingCard-1];
+		if (hand[choosingCard - 1] instanceof Monster) {
+			 Monster isMon = (Monster) hand[choosingCard - 1];
 			 field = new Monster(isMon.getAtk() , isMon.getDef() , isMon.getName() , isMon.getDiscription());
 		 }	 
 		 
