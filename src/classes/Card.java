@@ -6,7 +6,7 @@ public class Card {
 	private String discription;
   
 	public Card(String name,String discription) {
-	  this.name=name;
+	  this.name = name;
 	  this.discription=discription;  
 	}
   
