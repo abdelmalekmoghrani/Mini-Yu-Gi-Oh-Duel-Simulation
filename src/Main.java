@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+import classes.Card;
+import classes.Monster;
+import classes.Player;
+
 public class Main {
 
 	public static void main(String[] args) {
