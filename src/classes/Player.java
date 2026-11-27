@@ -26,8 +26,12 @@ public class Player {
 		return points;
 	}
 	
-	public void setPoints(int newpoints) {
-		this.points = newpoints;
+	public void setPoints(int newPoints) {
+		this.points = newPoints;
+	}
+	
+	public void damage(int dmg) {
+		this.points -= dmg;
 	}
 	
 	public boolean getisActive() {
@@ -42,9 +46,15 @@ public class Player {
 		return field;
 	} // field can be null
 	
-	public void addCard(Card newcard){
-		if(newcard instanceof Monster) {
-			Monster isMon = (Monster) newcard;
+	public void setFieldCard(Card newCard) {
+		this.field = newCard;
+	}
+	
+	//add card and display methods
+	
+	public void addCard(Card newCard){
+		if(newCard instanceof Monster) {
+			Monster isMon = (Monster) newCard;
 			if(cardnbr < 6) {
 				hand[cardnbr] = new Monster(isMon.getAtk() , isMon.getDef() , isMon.getName() , isMon.getDiscription());
 				cardnbr += 1 ;
@@ -59,6 +69,7 @@ public class Player {
 		}
 	}
 	
+	//summon method
 	public void summon() {
 		displayCards();
 		
@@ -72,10 +83,7 @@ public class Player {
 			
 		} while(hand[choosingCard - 1] instanceof Monster == false);
 		
-		if (hand[choosingCard - 1] instanceof Monster) {
-			 Monster isMon = (Monster) hand[choosingCard - 1];
-			 field = new Monster(isMon.getAtk() , isMon.getDef() , isMon.getName() , isMon.getDiscription());
-		 }	 
+		setFieldCard(hand[choosingCard - 1]);
 		 
 		 for(int i = 0 ; i < cardnbr ; i++) {
 			 if(choosingCard-1 == i) {
