@@ -22,6 +22,14 @@ public class Player {
 	}
 	
 	//setters and getters
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setName(String newName) {
+		this.name = newName;
+	}
+	
 	public int getPoint() {
 		return points;
 	}
