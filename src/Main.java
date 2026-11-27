@@ -53,6 +53,7 @@ public class Main {
 	
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		
 		boolean gameRuns = true ;
 		
@@ -92,6 +93,9 @@ public class Main {
 	public void checkWinner() {
 		
 		
+=======
+		// TODO Auto-generated method 
+>>>>>>> b2300d66777dda87b4b5b60d065c0a32f9139bb3
 	}
 
 }
