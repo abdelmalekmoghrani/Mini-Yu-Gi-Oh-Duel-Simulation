@@ -30,6 +30,10 @@ public class Player {
 		this.points = newPoints;
 	}
 	
+	public void damage(int dmg) {
+		this.points -= dmg;
+	}
+	
 	public boolean getisActive() {
 		return isActive;
 	}
@@ -43,11 +47,10 @@ public class Player {
 	} // field can be null
 	
 	public void setFieldCard(Card newCard) {
-		if (newCard instanceof Monster) {
-			 Monster isMon = (Monster) newCard;
-			 field = new Monster(isMon.getAtk() , isMon.getDef() , isMon.getName() , isMon.getDiscription());
-		 }
+		this.field = newCard;
 	}
+	
+	//add card and display methods
 	
 	public void addCard(Card newCard){
 		if(newCard instanceof Monster) {
@@ -66,6 +69,7 @@ public class Player {
 		}
 	}
 	
+	//summon method
 	public void summon() {
 		displayCards();
 		
