@@ -3,11 +3,10 @@ package classes;
 import java.util.Scanner;
 
 public class Player {
-	//initialize in the main function
-	private int points ; 
-	
+
+	private int points ; //initialize in the main function
 	private int cardnbr = 0 ;
-	private int lifepoints=4000;
+	
 	private boolean isActive = false ;
 	
 	private String name ;
@@ -42,7 +41,7 @@ public class Player {
 	public void damage(int dmg) {
 		this.points -= dmg;
 	}
-
+	
 	public boolean getisActive() {
 		return isActive;
 	}
@@ -84,7 +83,7 @@ public class Player {
 		
 		int choosingCard ;
 		do {
-   
+
 			do {
 				System.out.println("choose a Card (enter the Card number):");
 			 	choosingCard = scanner.nextInt();
