@@ -85,7 +85,7 @@ public class Player {
 		do {
 
 			do {
-				System.out.println("choose a Card (enter the Card number):");
+				System.out.printf("%s choose a Card to summon (enter the Card number):" , this.name);
 			 	choosingCard = scanner.nextInt();
 			} while(choosingCard > cardnbr || choosingCard <= 0);
 			
