@@ -1,5 +1,56 @@
-
+import classes.Card;
+import classes.Monster;
+import classes.Player;
 public class Main {
+	//battle runs
+	static void battle(Player attacker, Player defender) {
+		Monster ateck = (Monster)attacker.getFieldCard() ;
+		Monster defen =(Monster) defender.getFieldCard();
+		System.out.println(ateck.getName() +"Atk "+ ateck.getAtk() +"attacks"  +
+				defen.getName() +"Atk "+ defen.getAtk()  );
+		  
+		if(ateck.getAtk()==defen.getAtk()) {
+			attacker.setField(null);
+			defender.setField(null);
+			System.out.println("the both monsters is destroyed");
+			
+          }
+		else if(ateck.getAtk() > defen.getAtk()) {
+			defender.setField(null);
+			System.out.println("defender is destroyed");
+			
+		 }
+		else {
+			int diferenc= defen.getAtk()-ateck.getAtk();
+		 attacker.setField(null);
+		 System.out.println("attacker is destroyed");
+		 attacker.damage(diferenc);
+			
+		}
+	}
+		static void position (Player p) {
+			System.out.println ("player : " );
+			System.out.println("life points of player :" + p.getPoint());
+			if(p.getFieldCard()==null) {
+				System.out.println("Filed is empty");
+				
+			}
+			
+			else {
+				System.out.println("the Filed is:" + p.getFieldCard().getName());
+				
+				
+			}
+		}
+		
+		
+		
+		
+		
+	
+	
+	
+	
 
 	public static void main(String[] args) {
 		
@@ -23,12 +74,11 @@ public class Main {
 		
 		//initiate the battle by the active player (question)
 		
+			
 		
-		//battle runs
 			
 			
-		//display life points and the field state
-			
+					
 			
 		//check the winner
 			

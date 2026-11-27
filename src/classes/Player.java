@@ -3,10 +3,11 @@ package classes;
 import java.util.Scanner;
 
 public class Player {
-
-	private int points ; //initialize in the main function
-	private int cardnbr = 0 ;
+	//initialize in the main function
+	private int points ; 
 	
+	private int cardnbr = 0 ;
+	private int lifepoints=4000;
 	private boolean isActive = false ;
 	
 	private String name ;
@@ -42,6 +43,9 @@ public class Player {
 		return field;
 	} // field can be null
 	
+	
+	
+	
 	public void addCard(Card newcard){
 		if(newcard instanceof Monster) {
 			Monster isMon = (Monster) newcard;
@@ -59,12 +63,14 @@ public class Player {
 		}
 	}
 	
+	
+	}
 	public void summon() {
 		displayCards();
 		
 		int choosingCard ;
 		do {
-
+   
 			do {
 				System.out.println("choose a Card (enter the Card number):");
 			 	choosingCard = scanner.nextInt();
