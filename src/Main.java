@@ -14,8 +14,13 @@ public class Main {
 		boolean gameRuns = true ;
 		
 		//creating the Players
-		Player player1 = new Player("player1");
-        Player player2 = new Player("player2");
+		System.out.print("Enter Player 1 name: ");
+        String name1 = scanner.nextLine();
+        Player player1 = new Player(name1);
+
+        System.out.print("Enter Player 2 name: ");
+        String name2 = scanner.nextLine();
+        Player player2 = new Player(name2);
 		
 		//creating 12 Monsters
 		Monster[] cards = new Monster[12];
